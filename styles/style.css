@@ -1,6 +1,8 @@
 :root {
-    color: #fefffe;
-    background-color: #252525;
+    font-family: "Rubik", sans-serif;
+
+    color: #303338;
+    background-color: #F5F4F5;
 }
 
 body {
@@ -44,7 +46,7 @@ body {
     position: absolute;
     bottom: 15px;
 
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: center;
     color: #242424;
 }
@@ -52,7 +54,7 @@ body {
 #left-side p a {
     font-weight: 700;
     text-decoration: none;
-    color: #242424;
+    color: #791111;
 }
 
 /* TITLE */
@@ -70,15 +72,13 @@ body {
 
     font-size: 2rem;
     color: #242424;
-    /* color: #e9edf1; */
-    /* background-color: rgba(36, 36, 36, 0.5); */
     background-color: rgba(233, 237, 241, 0.6);
 }
 
 .material-symbols-outlined {
     font-size: 6rem;
     margin-right: 1rem;
-    color: #375994;
+    color: #791111;
 
     font-variation-settings:
     'FILL' 1,
@@ -90,6 +90,8 @@ body {
 /* BASIC STYLING */
 #right-side h1 {
     margin: 20px 0px 0px 50px;
+
+    color: #791111;
 }
 
 form {
@@ -102,14 +104,26 @@ form {
 fieldset {
     box-sizing: border-box;
 
-    padding: 10px 30px 20px 30px;
+    padding: 10px 30px 30px 30px;
     margin-bottom: 50px;
+
+    border: 1px solid #791111; 
+    border-radius: 8px;
 }
 
 label {
     display: block;
     
     padding-bottom: 5px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+legend {
+    font-size: 1.3rem;
+    font-weight: 700;
+
+    color: #791111;
 }
 
 /* ##################### */
@@ -137,6 +151,7 @@ label {
 /* select first & last name text field */
 input[type="text"] {
     width: 50%;
+    height: 1.6rem;
 }
 
 /* select birthday and gender container */
@@ -152,6 +167,15 @@ input[type="text"] {
 /* select gender container */
 #personal-info > div:last-of-type > span:last-of-type {
     width: 50%;
+}
+
+input[type="date"],
+select {
+    width: 50%;
+    height: 1.6rem;
+
+    font-size: 1rem;
+    font-family: "Rubik", sans-serif;
 }
 
 /* ##################### */
@@ -223,7 +247,20 @@ input[type="text"] {
     margin-left: 100px;
 }
 
+#create-acc p a {
+    color: #791111;
+    text-decoration: none;
+    font-weight: 700;
+}
+
 #create-acc button {
     width: 150px;
     height: 50px;
+
+    font-family: "Rubik", sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+
+    background-color: #791111;
+    color: #F5F4F5;
 }
