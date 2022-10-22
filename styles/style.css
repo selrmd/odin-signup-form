@@ -81,3 +81,102 @@ body {
     'GRAD' 0,
     'opsz' 48
 }
+
+/* put labels in their own line */
+label {
+    display: block;
+    
+    padding-bottom: 5px;
+}
+
+/* ##################### */
+/* PERSONAL INFO SECTION */
+/* ##################### */
+#personal-info {
+    box-sizing: border-box;
+
+    padding: 0 30px;
+    margin: 0 50px 20px 50px;
+}
+
+/* select first name & last name */
+#personal-info > div:first-of-type {
+    display: flex;
+
+    padding: 10px 0 10px 0;
+}
+
+/* select first name only */
+#personal-info > div:first-of-type > span:first-of-type {
+    width: 50%;
+}
+
+/* select last name only */
+#personal-info > div:first-of-type > span:last-of-type {
+    width: 50%;
+    
+}
+
+/* select first & last name text field */
+input[type="text"] {
+    width: 50%;
+}
+
+/* select birthday and gender container */
+#personal-info > div:last-of-type {
+    display: flex;
+
+    padding-bottom: 20px;
+}
+
+/* select date of birth container */
+#personal-info > div:last-of-type > span:first-of-type {
+    width: 50%;
+}
+
+/* select gender container */
+#personal-info > div:last-of-type > span:last-of-type {
+    width: 50%;
+}
+
+/* ##################### */
+/* ACCOUNT INFO SECTION */
+/* ####################*/
+#account-info {
+    box-sizing: border-box;
+
+    padding: 0 30px;
+    margin: 0 50px 20px 50px;
+}
+
+/* select new email */
+#account-info > div:first-of-type {
+    width: 80%;
+
+    padding: 10px 0 10px 0;
+}
+
+#account-info > div:first-of-type > input[type="email"] {
+    width: 50%;
+}
+
+/* select password container */
+#account-info > div:last-of-type {
+    display: flex;
+
+    padding-bottom: 20px;
+}
+
+/* select first password field */
+#account-info > div:last-of-type > span:first-of-type {
+    width: 50%;
+}
+
+/* select second password field */
+#account-info > div:last-of-type > span:last-of-type {
+    width: 50%;
+}
+
+#account-info input[type="password"] {
+    width: 50%;
+}

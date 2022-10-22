@@ -26,36 +26,41 @@
 
         <form action="#" type="post">
 
-            <fieldset>
+            <fieldset id="personal-info">
                 <legend>Personal Information:</legend>
 
                 <div>
-                    <label for="first-name">First Name:</label>
-                    <input type="text" id="first-name" name="first-name">
+                    <span>
+                        <label for="first-name">First Name:</label>
+                        <input type="text" id="first-name" name="first-name">
+                    </span>
+    
+                    <span>
+                        <label for="last-name">Last Name:</label>
+                        <input type="text" id="last-name" name="last-name">
+                    </span>
                 </div>
 
                 <div>
-                    <label for="last-name">Last Name:</label>
-                    <input type="text" id="last-name" name="last-name">
+                    <span>
+                        <label for="birth-date">Date of Birth: </label>
+                        <input type="date" id="birth-date" name="birth-date">
+                    </span>
+
+                    <span>
+                        <label for="gender">Gender: </label>
+                        <select id="gender">
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Non-Binary</option>
+                            <option>Other</option>
+                        </select>
+                    </span>
                 </div>
 
-                <div>
-                    <label for="birth-date">Date of Birth: </label>
-                    <input type="date" id="birth-date" name="birth-date">
-                </div>
-
-                <div>
-                    <label for="gender">Gender: </label>
-                    <select id="gender">
-                        <option>Male</option>
-                        <option>Female</option>
-                        <option>Non-Binary</option>
-                        <option>Other</option>
-                    </select>
-                </div>
             </fieldset>
 
-            <fieldset>
+            <fieldset id="account-info">
                 <legend>Account Information:</legend>
 
                 <div>
@@ -64,14 +69,17 @@
                 </div>
 
                 <div>
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password">
-                </div>
+                    <span>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password">
+                    </span>
 
-                <div>
-                    <label for="confirm-pass">Confirm Password:</label>
-                    <input type="password" id="confirm-pass" name="confirm-pass">
+                    <span>
+                        <label for="confirm-pass">Confirm Password:</label>
+                        <input type="password" id="confirm-pass" name="confirm-pass">
+                    </span>
                 </div>
+                
             </fieldset>
 
             <fieldset>
