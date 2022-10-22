@@ -19,6 +19,9 @@ body {
     position: relative;
 }
 
+#right-side {
+    width: 60%;
+}
 /* BACKGROUND IMAGE */
 #left-side img {
     width: 100%;
@@ -61,13 +64,16 @@ body {
     align-self: center;
 
     font-size: 2rem;
-    color: #e9edf1;
-    background-color: rgba(36, 36, 36, 0.5);
+    color: #242424;
+    /* color: #e9edf1; */
+    /* background-color: rgba(36, 36, 36, 0.5); */
+    background-color: rgba(233, 237, 241, 0.6);
 }
 
 .material-symbols-outlined {
     font-size: 6rem;
     margin-right: 1rem;
+    color: #375994;
 
     font-variation-settings:
     'FILL' 0,
