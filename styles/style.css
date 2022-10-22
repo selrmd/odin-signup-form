@@ -82,7 +82,25 @@ body {
     'opsz' 48
 }
 
-/* put labels in their own line */
+/* BASIC STYLING */
+#right-side h1 {
+    margin: 20px 0px 0px 50px;
+}
+
+form {
+    box-sizing: border-box;
+    
+    padding: 0;
+    margin: 30px 50px;
+}
+
+fieldset {
+    box-sizing: border-box;
+
+    padding: 10px 30px 20px 30px;
+    margin-bottom: 50px;
+}
+
 label {
     display: block;
     
@@ -92,18 +110,12 @@ label {
 /* ##################### */
 /* PERSONAL INFO SECTION */
 /* ##################### */
-#personal-info {
-    box-sizing: border-box;
-
-    padding: 0 30px;
-    margin: 0 50px 20px 50px;
-}
 
 /* select first name & last name */
 #personal-info > div:first-of-type {
     display: flex;
 
-    padding: 10px 0 10px 0;
+    padding-bottom: 10px;
 }
 
 /* select first name only */
@@ -125,8 +137,6 @@ input[type="text"] {
 /* select birthday and gender container */
 #personal-info > div:last-of-type {
     display: flex;
-
-    padding-bottom: 20px;
 }
 
 /* select date of birth container */
@@ -142,41 +152,74 @@ input[type="text"] {
 /* ##################### */
 /* ACCOUNT INFO SECTION */
 /* ####################*/
-#account-info {
-    box-sizing: border-box;
-
-    padding: 0 30px;
-    margin: 0 50px 20px 50px;
-}
 
 /* select new email */
 #account-info > div:first-of-type {
-    width: 80%;
+    width: 70%;
 
-    padding: 10px 0 10px 0;
+    padding-bottom: 10px;
 }
 
-#account-info > div:first-of-type > input[type="email"] {
+#account-info input[type="email"] {
     width: 50%;
 }
 
 /* select password container */
 #account-info > div:last-of-type {
     display: flex;
-
-    padding-bottom: 20px;
 }
 
-/* select first password field */
+/* select first password */
 #account-info > div:last-of-type > span:first-of-type {
     width: 50%;
 }
 
-/* select second password field */
+/* select second password */
 #account-info > div:last-of-type > span:last-of-type {
     width: 50%;
 }
 
+/* select password field */
 #account-info input[type="password"] {
     width: 50%;
+}
+
+/* ######################## */
+/* ADDITIONAL INFO SECTION */
+/* #######################*/
+#additional-info {
+    display: flex;
+}
+
+#additional-info > div:first-of-type {
+    width: 50%;
+}
+
+#additional-info > div:last-of-type {
+    width: 50%;
+}
+
+#additional-info input[type="email"],
+#additional-info input[type="tel"] {
+    width: 50%;
+}
+
+/* ################### */
+/* SUBMITTING SECTION */
+/* ##################*/
+#create-acc {
+    display: flex;
+    align-items: center;
+}
+
+#create-acc p {
+    margin: 0;
+    margin-left: 100px;
+}
+
+#create-acc button {
+    margin-left: 100px;
+
+    width: 150px;
+    height: 50px;
 }
