@@ -1,8 +1,17 @@
 :root {
+    --dark-red: #791111;
+    --light-grey: #F5F4F5;
+    --dark-grey: #242424;
+
+    --red: #BA0514;
+    --green: #359D2F;
+
+    --text-size: 1rem;
+
     font-family: "Rubik", sans-serif;
 
-    color: #303338;
-    background-color: #F5F4F5;
+    color: var(--dark-grey);
+    background-color: var(--light-grey);
 }
 
 body {
@@ -46,15 +55,15 @@ body {
     position: absolute;
     bottom: 15px;
 
-    font-size: 1rem;
+    font-size: var(--text-size);
     text-align: center;
-    color: #242424;
+    color: var(--dark-grey);
 }
 
 #left-side p a {
     font-weight: 700;
     text-decoration: none;
-    color: #791111;
+    color: var(--dark-red);
 }
 
 /* TITLE */
@@ -71,14 +80,15 @@ body {
     align-self: center;
 
     font-size: 2rem;
-    color: #242424;
+    color: var(--dark-grey);
     background-color: rgba(233, 237, 241, 0.6);
 }
 
 .material-symbols-outlined {
     font-size: 6rem;
     margin-right: 1rem;
-    color: #791111;
+    /* color: #791111; */
+    color: var(--dark-red);
 
     font-variation-settings:
     'FILL' 1,
@@ -91,7 +101,7 @@ body {
 #right-side h1 {
     margin: 20px 0px 0px 50px;
 
-    color: #791111;
+    color: var(--dark-red);
 }
 
 form {
@@ -107,7 +117,7 @@ fieldset {
     padding: 10px 30px 30px 30px;
     margin-bottom: 50px;
 
-    border: 1px solid #791111; 
+    border: 1px solid var(--dark-red); 
     border-radius: 8px;
 }
 
@@ -115,7 +125,7 @@ label {
     display: block;
     
     padding-bottom: 5px;
-    font-size: 1rem;
+    font-size: var(--text-size);
     font-weight: 700;
 }
 
@@ -123,7 +133,7 @@ legend {
     font-size: 1.3rem;
     font-weight: 700;
 
-    color: #791111;
+    color: var(--dark-red);
 }
 
 /* ##################### */
@@ -152,6 +162,11 @@ legend {
 input[type="text"] {
     width: 50%;
     height: 1.6rem;
+
+    border-radius: 4px;
+    border: 1px solid var(--dark-grey);
+
+    font-size: var(--text-size);
 }
 
 /* select birthday and gender container */
@@ -172,9 +187,12 @@ input[type="text"] {
 input[type="date"],
 select {
     width: 50%;
-    height: 1.6rem;
+    height: 1.9rem;
 
-    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid var(--dark-grey);
+
+    font-size: var(--text-size);
     font-family: "Rubik", sans-serif;
 }
 
@@ -189,8 +207,14 @@ select {
     padding-bottom: 10px;
 }
 
-#account-info input[type="email"] {
+input[type="email"],
+input[type="password"] {
     width: 50%;
+    height: 1.6rem;
+
+    font-size: var(--text-size);
+    border: 1px solid var(--dark-grey);
+    border-radius: 4px;
 }
 
 /* select password container */
@@ -205,11 +229,6 @@ select {
 
 /* select second password */
 #account-info > div:last-of-type > span:last-of-type {
-    width: 50%;
-}
-
-/* select password field */
-#account-info input[type="password"] {
     width: 50%;
 }
 
@@ -228,9 +247,14 @@ select {
     width: 50%;
 }
 
-#additional-info input[type="email"],
 #additional-info input[type="tel"] {
     width: 50%;
+    height: 1.6rem;
+    padding: 0;
+
+    font-size: var(--text-size);
+    border: 1px solid var(--dark-grey);
+    border-radius: 4px;
 }
 
 /* ################### */
@@ -248,19 +272,70 @@ select {
 }
 
 #create-acc p a {
-    color: #791111;
+    color: var(--dark-red);
     text-decoration: none;
     font-weight: 700;
 }
 
 #create-acc button {
-    width: 150px;
+    width: 160px;
     height: 50px;
 
     font-family: "Rubik", sans-serif;
     font-weight: bold;
     font-size: 1rem;
 
-    background-color: #791111;
-    color: #F5F4F5;
+    border-style: none;
+    border-radius: 8px;
+
+    background-color: var(--dark-red);
+    color: var(--light-grey);
+}
+
+#create-acc button:hover {
+    cursor: pointer;
+    background-color: #BA0C0C;
+}
+
+#create-acc button:active {
+    background-color: var(--dark-grey);
+    color: var(--light-grey);
+}
+
+/* ################ */
+/* FORM VALIDATION */
+/* ###############*/
+
+/* hide placeholder on focus */
+input[type="text"]:focus::placeholder,
+input[type="email"]:focus::placeholder,
+input[type="tel"]:focus::placeholder {
+    opacity: 0;
+}
+
+/* validation for text and email input */
+input[type="text"]:focus:invalid,
+input[type="email"]:focus:invalid {
+    outline: none;
+    border: 2px solid var(--red);
+}
+
+input[type="text"]:focus:valid,
+input[type="email"]:focus:valid {
+    outline: none;
+    border: 2px solid var(--green);
+}
+
+/* backup-email isn't required, don't show
+   red when it's focused and empty */
+#backup-email:focus {
+    border: 2px solid var(--dark-grey);
+}
+
+#backup-email:invalid {
+    border: 2px solid var(--red);
+}
+
+#backup-email:valid:not(:placeholder-shown) {
+    border: 2px solid var(--green);
 }
