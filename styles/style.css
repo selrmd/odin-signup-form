@@ -306,54 +306,52 @@ input[type="tel"] {
 /* FORM VALIDATION */
 /* ###############*/
 
+/* remove outline from form controls */
+input:not(input[type="date"]) {
+    outline: none;
+}
+
 /* hide placeholder on focus */
 input[type="text"]:focus::placeholder,
 input[type="email"]:focus::placeholder {
     opacity: 0;
 }
 
-/* validation for text and email input */
-input[type="text"]:focus:invalid,
-input[type="email"]:focus:invalid,
-input[type="tel"]:focus:invalid {
-    outline: none;
-    border: 2px solid var(--red);
+/* don't display green or red before user types anything */
+input[type="text"]:invalid:focus:placeholder-shown,
+input[type="email"]:invalid:focus:placeholder-shown,
+input[type="password"]:focus:placeholder-shown,
+#backup-email:focus:placeholder-shown,
+#phone:focus:placeholder-shown {
+    border: 2px solid var(--dark-grey);
 }
 
-input[type="text"]:focus:valid,
-input[type="email"]:focus:valid,
-input[type="tel"]:focus:valid {
-    outline: none;
+/* only show green for valid data when user typed something */
+input[type="text"]:valid:not(:placeholder-shown),
+input[type="email"]:valid:not(:placeholder-shown),
+input[type="password"]:valid:not(:placeholder-shown),
+input[type="tel"]:valid:not(:placeholder-shown) {
     border: 2px solid var(--green);
 }
 
-/* change the border to green/red 
-   when user un-focus valid/invalid data */
-input[type="text"]:valid,
-input[type="email"]:not(#backup-email):valid{ /* an empty non-required field is valid */
-    border: 2px solid var(--green);
-}
-
+/* only show red for invalid data when user typed something */
 input[type="text"]:invalid:not(:placeholder-shown),
 input[type="email"]:invalid:not(:placeholder-shown),
+input[type="password"]:invalid:not(:placeholder-shown),
 input[type="tel"]:invalid:not(:placeholder-shown) {
     border: 2px solid var(--red);
 }
 
-/* backup-email isn't required, don't show
-   green when it's focused and empty */
-#backup-email:focus,
-#phone:focus {
-    border: 2px solid var(--dark-grey);
-}
-
-#backup-email:invalid,
-#phone:invalid {
-    outline: none;
-    border: 2px solid var(--red);
-}
-
-#backup-email:valid:not(:placeholder-shown),
-#phone:valid:not(:placeholder-shown) {
+/* show green when it's focused & valid */
+input[type="text"]:focus:valid,
+input[type="email"]:focus:valid,
+input[type="tel"]:focus:valid {
     border: 2px solid var(--green);
+}
+
+/* show red when it's focused & invalid */
+input[type="text"]:focus:invalid,
+input[type="email"]:focus:invalid,
+input[type="tel"]:focus:invalid {
+    border: 2px solid var(--red);
 }
