@@ -69,7 +69,7 @@ body {
 /* TITLE */
 #left-title {
     width: 100%;
-    height: 12rem;
+    height: 10vw;
 
     display: flex;
     justify-content: center;
@@ -79,15 +79,15 @@ body {
     /* for flex in left-side */
     align-self: center;
 
-    font-size: 2rem;
+    font-size: 2vw;
     color: var(--dark-grey);
     background-color: rgba(233, 237, 241, 0.6);
 }
 
 .material-symbols-outlined {
-    font-size: 6rem;
-    margin-right: 1rem;
-    /* color: #791111; */
+    font-size: 5vw;
+    margin-right: 1vw;
+
     color: var(--dark-red);
 
     font-variation-settings:
@@ -247,7 +247,7 @@ input[type="password"] {
     width: 50%;
 }
 
-#additional-info input[type="tel"] {
+input[type="tel"] {
     width: 50%;
     height: 1.6rem;
     padding: 0;
@@ -308,34 +308,52 @@ input[type="password"] {
 
 /* hide placeholder on focus */
 input[type="text"]:focus::placeholder,
-input[type="email"]:focus::placeholder,
-input[type="tel"]:focus::placeholder {
+input[type="email"]:focus::placeholder {
     opacity: 0;
 }
 
 /* validation for text and email input */
 input[type="text"]:focus:invalid,
-input[type="email"]:focus:invalid {
+input[type="email"]:focus:invalid,
+input[type="tel"]:focus:invalid {
     outline: none;
     border: 2px solid var(--red);
 }
 
 input[type="text"]:focus:valid,
-input[type="email"]:focus:valid {
+input[type="email"]:focus:valid,
+input[type="tel"]:focus:valid {
     outline: none;
     border: 2px solid var(--green);
 }
 
-/* backup-email isn't required, don't show
-   red when it's focused and empty */
-#backup-email:focus {
-    border: 2px solid var(--dark-grey);
+/* change the border to green/red 
+   when user un-focus valid/invalid data */
+input[type="text"]:valid,
+input[type="email"]:not(#backup-email):valid{ /* an empty non-required field is valid */
+    border: 2px solid var(--green);
 }
 
-#backup-email:invalid {
+input[type="text"]:invalid:not(:placeholder-shown),
+input[type="email"]:invalid:not(:placeholder-shown),
+input[type="tel"]:invalid:not(:placeholder-shown) {
     border: 2px solid var(--red);
 }
 
-#backup-email:valid:not(:placeholder-shown) {
+/* backup-email isn't required, don't show
+   green when it's focused and empty */
+#backup-email:focus,
+#phone:focus {
+    border: 2px solid var(--dark-grey);
+}
+
+#backup-email:invalid,
+#phone:invalid {
+    outline: none;
+    border: 2px solid var(--red);
+}
+
+#backup-email:valid:not(:placeholder-shown),
+#phone:valid:not(:placeholder-shown) {
     border: 2px solid var(--green);
 }
