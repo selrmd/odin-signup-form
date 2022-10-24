@@ -355,3 +355,41 @@ input[type="email"]:focus:invalid,
 input[type="tel"]:focus:invalid {
     border: 2px solid var(--red);
 }
+
+/* ############## */
+/* JS VALIDATION */
+/* #############*/
+
+/* selects the <span> container of confirm-pass field
+   because ::after only works with containers */
+#account-info > div:last-of-type > span:last-child > span:first-of-type {
+    position: relative;
+}
+
+.error::after {
+    position: absolute;
+    right: -30px;
+
+    font-family: "Material Symbols Outlined";
+    content: "\e000";
+    font-size: 1.5rem;
+    color: var(--red);
+
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+#account-info > p {
+    display: none;
+    
+    margin: 0;
+    margin-top: 8px;
+    margin-bottom: -20px;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--red);
+}

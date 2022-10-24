@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik">
     <link rel="stylesheet" href="./styles/style.css">
-    <script src="./scripts/script.js"></script>
+    <script src="./scripts/script.js" defer></script>
 </head>
 <body>
     <div id="left-side">
@@ -31,23 +31,27 @@
                 <legend>Personal Information:</legend>
 
                 <div>
+                    <!--FIRST NAME-->
                     <span>
                         <label for="first-name">First Name: <span aria-label="required">*</span></label>
-                        <input type="text" id="first-name" name="first-name" placeholder="John" pattern="[a-zA-Z]{2,}" required>
+                        <input type="text" id="first-name" name="first-name" placeholder="John" pattern="[a-zA-Z]{2,}" 
+                            title="Must be at least 2 characters long. Only accept letters" required>
                     </span>
-    
+                    <!--LAST NAME-->
                     <span>
                         <label for="last-name">Last Name: <span aria-label="required">*</span></label>
-                        <input type="text" id="last-name" name="last-name" placeholder="Doe" pattern="[a-zA-Z]{2,}" required>
+                        <input type="text" id="last-name" name="last-name" placeholder="Doe" pattern="[a-zA-Z]{2,}" 
+                            title="Must be at least 2 characters long. Only accept letters" required>
                     </span>
                 </div>
-
+               
                 <div>
+                    <!--BIRTHDAY-->
                     <span>
                         <label for="birth-date">Date of Birth: </label>
                         <input type="date" id="birth-date" name="birth-date">
                     </span>
-
+                    <!--GENDER-->
                     <span>
                         <label for="gender">Gender: </label>
                         <select id="gender">
@@ -58,41 +62,41 @@
                         </select>
                     </span>
                 </div>
-
             </fieldset>
 
             <fieldset id="account-info">
                 <legend>Account Information:</legend>
-
+                <!-- CREATED EMAIL-->
                 <div>
                     <label for="email">Email: <span aria-label="required">*</span></label>
                     <input type="email" id="email" name="email" placeholder="john.doe@awesomemail.com" required>
                 </div>
-
+                <!-- PASSWORD-->
                 <div>
                     <span>
                         <label for="password">Password: <span aria-label="required">*</span></label>
                         <input type="password" id="password" name="password" placeholder=" " 
                         pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
                     </span>
-
+                    <!-- CONFIRMED PASSWORD-->
                     <span>
                         <label for="confirm-pass">Confirm Password: <span aria-label="required">*</span></label>
-                        <input type="password" id="confirm-pass" name="confirm-pass" placeholder=" " 
-                        pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+                        <span><input type="password" id="confirm-pass" name="confirm-pass" placeholder=" " 
+                            pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+                        </span>
                     </span>
                 </div>
-
+                <p>*Must be at least 8 characters. With upper & lowercase letters, a number and a symbol.</p>
             </fieldset>
 
             <fieldset id="additional-info">
                 <legend>Additional Info:</legend>
-
+                <!-- BACKUP MAIL-->
                 <div>
                     <label for="backup-email">Backup Email:</label>
                     <input type="email" id="backup-email" name="backup-email" placeholder="john.doe@example.com">
                 </div>
-
+                <!--PHONE NUMBER-->
                 <div>
                     <label for="phone">Phone Number:</label>
                     <input type="tel" id="phone" name="phone" placeholder="+99(99)9999-9999"
@@ -100,12 +104,12 @@
                 </div>
             </fieldset>
 
+            <!-- SIGN-UP OR SIGN-IN-->
             <div id="create-acc">
                 <button type="submit" id="create-account" name="create-account">Create Account</button>
                 <p>Already have an account? <a href="#">Sign-in</a> instead</p>
             </div>
         </form>
-
     </div>
 </body>
 </html>
